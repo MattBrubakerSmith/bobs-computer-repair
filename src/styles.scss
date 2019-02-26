@@ -1,3 +1,7 @@
 @import "theme.scss";
 
 @include angular-material-theme($bobs-theme);
+
+body {
+    margin: unset;
+}
