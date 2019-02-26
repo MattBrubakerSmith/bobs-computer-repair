@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$bobs-theme-primary: mat-palette($mat-teal);
+$bobs-theme-accent: mat-palette($mat-deep-orange);
+$bobs-theme-warn: mat-palette($mat-red);
+
+$bobs-theme: mat-dark-theme($bobs-theme-primary, $bobs-theme-accent, $bobs-theme-warn);
