@@ -1,3 +1,33 @@
-<p>
-  {{ bobJob.name }}
-</p>
+<!-- <div class="row">
+  <mat-icon 
+    class="col-md-3"
+  >
+    {{ bobJob.icon }}
+  </mat-icon>
+  <p
+    class="col-md-9"
+  >
+    {{ bobJob.description }}
+  </p>
+</div> -->
+<mat-card 
+  color="primary"
+  fxLayout="row wrap"
+  fxLayoutAlign="space-around center"
+>
+  <div class="col-sm-3">
+    <mat-icon>
+      {{ bobJob.icon }}
+    </mat-icon>
+  </div>
+  <div class="col-sm-9">
+    <mat-card-header>
+      <mat-card-title>
+        {{ bobJob.name }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      {{ bobJob.description }}
+    </mat-card-content>
+  </div>
+</mat-card>
