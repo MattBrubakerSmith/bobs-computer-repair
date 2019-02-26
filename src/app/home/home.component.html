@@ -1,3 +1,5 @@
-<p>
-  home works!
-</p>
+<div
+    *ngFor="let job of bobJobs"
+>
+    <app-featured-bob-job [bobJob]="job"></app-featured-bob-job>
+</div>

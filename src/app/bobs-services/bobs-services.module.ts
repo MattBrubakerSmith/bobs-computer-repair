@@ -1,14 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FeaturedRepairServiceComponent } from './featured-repair-service/featured-repair-service.component';
-import { RepairServiceListingComponent } from './repair-service-listing/repair-service-listing.component';
+import { FeaturedBobJobComponent } from './featured-bob-job/featured-bob-job.component';
+import { BobJobListingComponent } from './bob-job-listing/bob-job-listing.component';
+import { BobJobService } from './bob-job.service';
 
 @NgModule({
   declarations: [
-    FeaturedRepairServiceComponent,
-    RepairServiceListingComponent
+    FeaturedBobJobComponent,
+    BobJobListingComponent
+  ],
+  providers: [
+    BobJobService
   ],
   imports: [
+    CommonModule
+  ],
+  exports: [
+    FeaturedBobJobComponent,
+    BobJobListingComponent,
     CommonModule
   ]
 })
