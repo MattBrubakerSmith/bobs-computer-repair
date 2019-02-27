@@ -1,6 +1,11 @@
 <div class="page-container">
-  <p>
-    services works!
-  </p>
+  <mat-list
+    *ngFor="let bj of bobJobs"
+  >
+    <mat-list-item>
+        <app-bob-job-listing [bobJob]="bj"></app-bob-job-listing>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 </div>
 

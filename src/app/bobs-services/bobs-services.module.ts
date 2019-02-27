@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FeaturedBobJobComponent } from './featured-bob-job/featured-bob-job.component';
 import { BobJobListingComponent } from './bob-job-listing/bob-job-listing.component';
 import { BobJobService } from './bob-job.service';
-import { MatIconModule, MatCardModule } from '@angular/material';
+import { MatIconModule, MatCardModule, MatDividerModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { MatIconModule, MatCardModule } from '@angular/material';
   imports: [
     CommonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   exports: [
     FeaturedBobJobComponent,

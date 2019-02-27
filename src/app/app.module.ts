@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatGridListModule } from "@angular/material";
+import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatGridListModule, MatDividerModule, MatListModule } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule }from "@angular/flex-layout";
 
@@ -32,6 +32,8 @@ import { BobsServicesModule } from "./bobs-services/bobs-services.module";
     MatButtonModule,
     MatIconModule,
     MatGridListModule,
+    MatListModule,
+    MatDividerModule,
     FlexLayoutModule,
     BobsServicesModule
   ],

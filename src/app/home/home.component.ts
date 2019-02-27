@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
 
   constructor(bobJobService: BobJobService) { 
     this.bobJob = bobJobService.getBobJobById(Math.floor(Math.random() * 7));
-    console.log(this.bobJob)
   }
 
   ngOnInit() {

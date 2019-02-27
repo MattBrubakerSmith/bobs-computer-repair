@@ -16,14 +16,17 @@
       {{ bobJob.icon }}
     </mat-icon>
   </div>
-  <div>
+  <div class="bob-job-card-content">
     <mat-card-header>
       <mat-card-title>
         {{ bobJob.name }}
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        {{ bobJob.description }}
+        <mat-divider [inset]="true"></mat-divider>
+        <p>
+          {{ bobJob.description }}
+        </p>
     </mat-card-content>
   </div>
 </mat-card>
