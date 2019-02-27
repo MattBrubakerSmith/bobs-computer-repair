@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatGridListModule, MatDividerModule, MatListModule, MatCardModule, MatCheckboxModule } from "@angular/material";
+import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatGridListModule, MatDividerModule, MatListModule, MatCardModule, MatCheckboxModule, MatFormFieldModule } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule }from "@angular/flex-layout";
 
@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 
 import { BobsServicesModule } from "./bobs-services/bobs-services.module";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RepairServiceFormComponent } from './services/repair-service-form/repair-service-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     ServicesComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    RepairServiceFormComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BobsServicesModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

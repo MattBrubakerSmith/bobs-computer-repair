@@ -1,0 +1,22 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div
+    *ngFor="let bj of bobJobs"
+  >
+    <mat-form-field
+      [formGroup]="repairServiceForm"
+      formControlName="{{ bj.url }}"
+    >
+      <mat-label>{{ bj.name }}</mat-label>
+      <mat-checkbox 
+        [id]="bj.url"
+      ></mat-checkbox>
+    </mat-form-field>
+  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+  >
+    Submit Repair Request
+  </button>
+</form>
