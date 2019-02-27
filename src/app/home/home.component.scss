@@ -1,0 +1,26 @@
+.banner-container {
+    position: relative;
+    height: 400px;
+}
+
+.banner-image, .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.banner-text {
+    height: 100%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1, p {
+        font-family: 'VT323', monospace;
+        color: white;
+        margin: unset;
+    }
+}
