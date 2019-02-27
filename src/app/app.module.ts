@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatGridListModule, MatDividerModule, MatListModule, MatCardModule } from "@angular/material";
+import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatGridListModule, MatDividerModule, MatListModule, MatCardModule, MatCheckboxModule } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule }from "@angular/flex-layout";
 
@@ -13,7 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
 
 import { BobsServicesModule } from "./bobs-services/bobs-services.module";
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     FlexLayoutModule,
     BobsServicesModule,
-    HttpClientModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
