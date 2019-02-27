@@ -1,8 +1,15 @@
 .mat-card {
     max-width: 80vw;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
 }
 
 .mat-icon {
     font-size: 10em;
+    width: 20%;
+}
+
+.mat-card-content {
+    margin-left: 16px;
 }

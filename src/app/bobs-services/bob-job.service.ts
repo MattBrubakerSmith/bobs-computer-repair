@@ -11,16 +11,24 @@ export class BobJobService {
   }
 
   getBobJobById(id: number) {
+    let bobJob: BobJob;
     BOBJOBS.forEach(job => {
-      if(job.id === id) return job;
+      if(job.id === id) {
+        bobJob = job;
+        return;
+      }
     });
-    return null;
+    return bobJob;
   } 
 
   getBobJobByUrl(url: string) {
+    let bobJob: BobJob;
     BOBJOBS.forEach(job => {
-      if(job.url === url) return job;
+      if(job.url === url) {
+        bobJob = job;
+        return;
+      }
     });
-    return null;
+    return bobJob;
   }
 }

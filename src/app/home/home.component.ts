@@ -11,10 +11,11 @@ import { BobJob } from "../bobs-services/bob-job";
   ]
 })
 export class HomeComponent implements OnInit {
-  bobJobs: BobJob[];
+  bobJob: BobJob;
 
   constructor(bobJobService: BobJobService) { 
-    this.bobJobs = bobJobService.getAllBobJobs();
+    this.bobJob = bobJobService.getBobJobById(Math.floor(Math.random() * 7));
+    console.log(this.bobJob)
   }
 
   ngOnInit() {

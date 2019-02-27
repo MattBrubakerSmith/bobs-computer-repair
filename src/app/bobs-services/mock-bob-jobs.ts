@@ -7,7 +7,7 @@ export const BOBJOBS: BobJob[] = [
         url: "password-reset",
         icon: "security",
         type: "software", 
-        description: "Bob will personally reset your password to \"bob\". Changing a password to anything else will cost an additional sum, to be determined by Bob through an elaborate quoting process.", 
+        description: "Bob will personally reset your password to \"bob\". Changing a password to anything else will cost an additional fee, to be determined by Bob through an elaborate quoting process that involves Bobbing for apples.", 
         price: 39.99
     },
     {
