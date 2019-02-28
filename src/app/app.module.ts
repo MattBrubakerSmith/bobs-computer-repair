@@ -14,6 +14,9 @@ import { RouterModule } from '@angular/router';
 import { BobsServicesModule } from "./bobs-services/bobs-services.module";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RepairServiceFormComponent } from './services/repair-service-form/repair-service-form.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './store/reducers';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { RepairServiceFormComponent } from './services/repair-service-form/repai
     FormsModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    StoreModule.forRoot(reducers, { metaReducers })
   ],
   providers: [],
   bootstrap: [AppComponent]

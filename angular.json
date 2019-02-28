@@ -137,5 +137,8 @@
       }
     }
   },
-  "defaultProject": "bobs-computer-repair"
+  "defaultProject": "bobs-computer-repair",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
