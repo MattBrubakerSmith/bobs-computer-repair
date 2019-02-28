@@ -5,15 +5,13 @@ import {
   createSelector,
   MetaReducer
 } from '@ngrx/store';
-import { environment } from '../../../environments/environment';
 
 export interface State {
-
+  // bobJobs: BobJob[];
+  // firstName: string;
+  // lastName: string;
+  // email: string;
 }
 
 export const reducers: ActionReducerMap<State> = {
-
 };
-
-
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
