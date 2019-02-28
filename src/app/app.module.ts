@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatGridListModule, MatDividerModule, MatListModule, MatCardModule, MatCheckboxModule, MatFormFieldModule } from "@angular/material";
+import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatDividerModule, MatCardModule, MatCheckboxModule, MatFormFieldModule } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { FlexLayoutModule }from "@angular/flex-layout";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,11 +33,8 @@ import { RepairServiceFormComponent } from './services/repair-service-form/repai
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    MatGridListModule,
-    MatListModule,
     MatDividerModule,
     MatCardModule,
-    FlexLayoutModule,
     BobsServicesModule,
     FormsModule,
     ReactiveFormsModule,
