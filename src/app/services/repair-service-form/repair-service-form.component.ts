@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { MatDialogRef } from "@angular/material";
 import { BobJobService } from "../../bobs-services/bob-job.service";
 import { BobJob } from 'src/app/bobs-services/bob-job';
+import { ServiceRequest } from 'src/app/store/reducers/service-request.reducer';
 
 @Component({
   selector: 'app-repair-service-form',
@@ -36,7 +37,7 @@ export class RepairServiceFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    console.log((this.form.value) as ServiceRequest);
     this.dialogRef.close();
   }
 }

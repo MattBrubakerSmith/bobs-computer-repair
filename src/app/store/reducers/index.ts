@@ -6,12 +6,12 @@ import {
   MetaReducer
 } from '@ngrx/store';
 
+import * as fromServiceRequest from "./service-request.reducer";
+
 export interface State {
-  // bobJobs: BobJob[];
-  // firstName: string;
-  // lastName: string;
-  // email: string;
+  serviceRequest: fromServiceRequest.ServiceRequest
 }
 
 export const reducers: ActionReducerMap<State> = {
+  serviceRequest: fromServiceRequest.reducer
 };
