@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatDividerModule, MatCardModule, MatCheckboxModule, MatFormFieldModule } from "@angular/material";
+import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatDividerModule, MatCardModule, MatCheckboxModule, MatFormFieldModule, MatDialog, MatDialogModule } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,9 +42,13 @@ import { reducers } from './store/reducers';
     ReactiveFormsModule,
     MatCheckboxModule,
     MatFormFieldModule,
+    MatDialogModule,
     StoreModule.forRoot(reducers)
   ],
   providers: [],
+  entryComponents: [
+    RepairServiceFormComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,27 @@
+mat-checkbox {
+    margin-right: 15px;
+}
+
+mat-icon {
+    vertical-align: sub;
+    margin-right: 10px;
+}
+
+label {
+    line-height: 2em;
+}
+
+.repair-service-checkbox-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.repair-service-checkbox-group {
+    width: 50%;
+}
+
+.button-container {
+    width: 100%;
+    text-align: right;
+}

@@ -1,11 +1,17 @@
 <div class="page-container">
   <h1 class="mat-display-3">Repair Services</h1>
+  <button 
+    mat-raised-button
+    color="primary"
+    (click)="openFormDialog()"
+  >
+    Order Repair Services
+  </button>
   <mat-divider></mat-divider>
   <div
     *ngFor="let bj of bobJobs"
   >
     <app-featured-bob-job [bobJob]="bj"></app-featured-bob-job>
   </div>
-  <app-repair-service-form></app-repair-service-form>
 </div>
 

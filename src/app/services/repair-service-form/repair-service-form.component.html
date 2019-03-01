@@ -1,22 +1,27 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-  <div
-    *ngFor="let bj of bobJobs"
-  >
-    <mat-form-field
-      [formGroup]="repairServiceForm"
-      formControlName="{{ bj.url }}"
+<form 
+  [formGroup]="form" 
+  (ngSubmit)="onSubmit()"
+>
+  <div class="repair-service-checkbox-container">
+    <div
+      class="repair-service-checkbox-group"
+      formArrayName="repairServices"
+      *ngFor="let rs of form.controls.repairServices.controls; let i = index"
     >
-      <mat-label>{{ bj.name }}</mat-label>
-      <mat-checkbox 
-        [id]="bj.url"
-      ></mat-checkbox>
-    </mat-form-field>
+      <label>
+        <mat-checkbox [formControlName]="i"></mat-checkbox>
+        <mat-icon color="accent">{{ bobJobs[i].icon }}</mat-icon>
+        <span class="mat-h3">{{ bobJobs[i].name }}</span>
+      </label>
+    </div>
   </div>
-  <button
-    mat-raised-button
-    color="primary"
-    type="submit"
-  >
-    Submit Repair Request
-  </button>
+  <div class="button-container">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+    >
+      Submit Repair Request
+    </button>
+  </div>
 </form>

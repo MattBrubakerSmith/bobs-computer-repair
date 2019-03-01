@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
+import { MatDialogRef } from "@angular/material";
+import { BobJobService } from "../../bobs-services/bob-job.service";
+import { BobJob } from 'src/app/bobs-services/bob-job';
 
 @Component({
   selector: 'app-repair-service-form',
@@ -7,12 +10,30 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./repair-service-form.component.scss']
 })
 export class RepairServiceFormComponent {
-  repairServiceForm: FormGroup
+  public dialogRef: MatDialogRef<RepairServiceFormComponent>;
+  bobJobs: BobJob[];
+  form: FormGroup;
 
-  constructor() { 
+  constructor(bobJobService: BobJobService, private formBuilder: FormBuilder) { 
+    this.bobJobs = bobJobService.getAllBobJobs();
+    this.form = this.formBuilder.group({
+      firstName: new FormControl(),
+      lastName: new FormControl(),
+      email: new FormControl(),
+      repairServices: new FormArray([])
+    });
+
+    this.addCheckboxes();
   }
 
-  onSubmit(formData) {
-    console.log(formData)
+  addCheckboxes() {
+    this.bobJobs.map((bj, i) => {
+      const control = new FormControl(false);
+      (this.form.controls.repairServices as FormArray).push(control);
+    });
+  }
+
+  onSubmit() {
+    console.log(this.form.value);
   }
 }
