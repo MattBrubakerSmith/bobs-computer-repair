@@ -2,6 +2,16 @@
   [formGroup]="form" 
   (ngSubmit)="onSubmit()"
 >
+  <mat-form-field>
+    <input matInput formControlName="firstName" placeholder="First name" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="lastName" placeholder="Last name" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="email" type="email" placeholder="Email" />
+  </mat-form-field>
+  
   <div class="repair-service-checkbox-container">
     <div
       class="repair-service-checkbox-group"
