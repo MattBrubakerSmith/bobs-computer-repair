@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RepairServiceFormComponent } from './services/repair-service-form/repair-service-form.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers';
+import { EmployeesOnlyComponent } from './employees-only/employees-only.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { reducers } from './store/reducers';
     ServicesComponent,
     AboutComponent,
     ContactComponent,
-    RepairServiceFormComponent
+    RepairServiceFormComponent,
+    EmployeesOnlyComponent
   ],
   imports: [
     BrowserModule,

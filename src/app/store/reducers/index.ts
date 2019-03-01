@@ -15,3 +15,5 @@ export interface State {
 export const reducers: ActionReducerMap<State> = {
   serviceRequest: fromServiceRequest.reducer
 };
+
+export const selectServiceRequestState = createFeatureSelector<fromServiceRequest.ServiceRequest>("serviceRequest");

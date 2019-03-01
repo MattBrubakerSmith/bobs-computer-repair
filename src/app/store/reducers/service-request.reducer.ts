@@ -10,7 +10,7 @@ export interface ServiceRequest {
 
 export const initialState: ServiceRequest = {
   repairServices: [],
-  firstName: null,
+  firstName: "Blort",
   lastName: null,
   email: null
 };
