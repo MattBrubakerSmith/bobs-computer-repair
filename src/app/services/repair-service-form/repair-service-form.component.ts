@@ -4,6 +4,9 @@ import { MatDialogRef } from "@angular/material";
 import { BobJobService } from "../../bobs-services/bob-job.service";
 import { BobJob } from 'src/app/bobs-services/bob-job';
 import { ServiceRequest } from 'src/app/store/reducers/service-request.reducer';
+import { Store } from "@ngrx/store";
+import * as fromServiceRequest from "../../store/reducers/service-request.reducer";
+import { SubmitServiceRequest } from "../../store/actions/service-request.actions";
 
 @Component({
   selector: 'app-repair-service-form',
@@ -14,7 +17,12 @@ export class RepairServiceFormComponent implements OnInit {
   bobJobs: BobJob[];
   form: FormGroup;
 
-  constructor(bobJobService: BobJobService, private formBuilder: FormBuilder, public dialogRef: MatDialogRef<RepairServiceFormComponent>) { 
+  constructor(
+      bobJobService: BobJobService, 
+      private formBuilder: FormBuilder, 
+      public dialogRef: MatDialogRef<RepairServiceFormComponent>,
+      private store: Store<fromServiceRequest.ServiceRequest>
+    ) { 
     this.bobJobs = bobJobService.getAllBobJobs();
   }
 
@@ -37,7 +45,11 @@ export class RepairServiceFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log((this.form.value) as ServiceRequest);
+    this.store.dispatch(new SubmitServiceRequest((this.form.value) as ServiceRequest));
     this.dialogRef.close();
+  }
+
+  getServiceRequest() {
+    return (this.form.value) as ServiceRequest;
   }
 }
