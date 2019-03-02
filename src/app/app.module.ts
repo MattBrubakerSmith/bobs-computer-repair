@@ -17,6 +17,7 @@ import { RepairServiceFormComponent } from './services/repair-service-form/repai
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers';
 import { EmployeesOnlyComponent } from './employees-only/employees-only.component';
+import { InvoiceComponent } from './employees-only/invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EmployeesOnlyComponent } from './employees-only/employees-only.componen
     AboutComponent,
     ContactComponent,
     RepairServiceFormComponent,
-    EmployeesOnlyComponent
+    EmployeesOnlyComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { EmployeesOnlyComponent } from './employees-only/employees-only.componen
   ],
   providers: [],
   entryComponents: [
-    RepairServiceFormComponent
+    RepairServiceFormComponent,
+    InvoiceComponent
   ],
   bootstrap: [AppComponent]
 })

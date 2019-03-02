@@ -31,4 +31,11 @@
   <p>
     {{ total | currency:'USD':'symbol' }}
   </p>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="viewInvoice()"
+  >
+    View Invoice
+  </button>
 </div>

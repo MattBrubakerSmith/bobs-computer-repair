@@ -6,6 +6,8 @@ import { Store } from '@ngrx/store';
 import { BobJob } from '../bobs-services/bob-job';
 import { BobJobService } from '../bobs-services/bob-job.service';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 @Component({
   selector: 'app-employees-only',
@@ -19,8 +21,17 @@ export class EmployeesOnlyComponent implements OnInit {
   partsPrice: FormControl = new FormControl();
   laborPrice: FormControl = new FormControl();
   total: number = 0;
+  userData: {
+    firstName: string,
+    lastName: string,
+    email: string
+  }
 
-  constructor(private store: Store<fromServiceRequest.ServiceRequest>, private bobJobService: BobJobService) { }
+  constructor(
+    private store: Store<fromServiceRequest.ServiceRequest>, 
+    private bobJobService: BobJobService,
+    public invoiceDialog: MatDialog
+  ) { }
 
   ngOnInit() {
     this.serviceRequest$ = this.store.select(fromStore.selectServiceRequestState);
@@ -41,6 +52,11 @@ export class EmployeesOnlyComponent implements OnInit {
       this.selectedBobJobs = jobs;
       this.servicePriceTotal = total;
       this.total = total;
+      this.userData = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email
+      }
     });
   }
 
@@ -48,5 +64,19 @@ export class EmployeesOnlyComponent implements OnInit {
     this.total = this.servicePriceTotal + 
                 (this.partsPrice.value ? this.partsPrice.value : 0) + 
                 (this.laborPrice.value ? this.laborPrice.value : 0);
+  }
+
+  viewInvoice() {
+    this.invoiceDialog.open(InvoiceComponent, {
+      width: "500px",
+      data: {
+        userData: this.userData,
+        bobJobs: this.selectedBobJobs,
+        servicePriceTotal: this.servicePriceTotal,
+        partsPrice: this.partsPrice.value,
+        laborPrice: this.laborPrice.value,
+        total: this.total
+      }
+    });
   }
 }
