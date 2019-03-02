@@ -9,11 +9,18 @@
       <mat-card-title>
         {{ bobJob.name }}
       </mat-card-title>
+      <mat-card-subtitle>
+        {{ bobJob.type | titlecase }} service
+      </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <mat-divider [inset]="true"></mat-divider>
         <p>
           {{ bobJob.description }}
+        </p>
+        <mat-divider [inset]="true"></mat-divider>
+        <p>
+          Price: {{ bobJob.price | currency:'USD':'symbol' }}
         </p>
     </mat-card-content>
   </div>

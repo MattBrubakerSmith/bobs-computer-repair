@@ -18,9 +18,9 @@ export const initialState: ServiceRequest = {
     true,
     false
   ],
-  firstName: "Blort",
-  lastName: null,
-  email: null
+  firstName: "Dee",
+  lastName: "Fault",
+  email: "theoriginal@standard.com"
 };
 
 export function reducer(state = initialState, action: CustomAction): ServiceRequest {

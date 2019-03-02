@@ -1,26 +1,30 @@
 <div class="page-container">
-  <p>Hi {{ (serviceRequest$ | async).firstName }}!</p>
+  <h2 class="mat-h2">Service Request from {{ (serviceRequest$ | async).firstName }} {{ (serviceRequest$ | async).lastName }}:</h2>
   <div
     *ngFor="let bj of selectedBobJobs"
   >
-    <p>{{ bj.name }}</p>
+    <p><span class="mat-h4">{{ bj.name }}:</span><span class="mat-body"> {{ bj.price | currency:'USD':'symbol' }}</span></p>
   </div>
-  <mat-form-field>
-    <input 
-      matInput 
-      [formControl]="partsPrice"
-      type="number"
-      placeholder="Enter parts price" 
-    />
-  </mat-form-field>
-  <mat-form-field>
-    <input 
-      matInput 
-      [formControl]="laborPrice"
-      type="number"
-      placeholder="Enter labor price" 
-    />
-  </mat-form-field>
+  <div>
+    <mat-form-field>
+      <input 
+        matInput 
+        [formControl]="partsPrice"
+        type="number"
+        placeholder="Enter parts price" 
+      />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input 
+        matInput 
+        [formControl]="laborPrice"
+        type="number"
+        placeholder="Enter labor price" 
+      />
+    </mat-form-field>
+  </div>
   <button
     mat-raised-button
     color="accent"
@@ -28,9 +32,13 @@
   >
     Recalculate Total
   </button>
-  <p>
-    {{ total | currency:'USD':'symbol' }}
-  </p>
+  <div>
+    <p><span class="mat-h4">Parts:</span><span class="mat-body"> {{ partsPrice.value ? partsPrice.value : 0 | currency:'USD':'symbol' }}</span></p>
+    <p><span class="mat-h4">Labor:</span><span class="mat-body"> {{ laborPrice.value ? laborPrice.value : 0 | currency:'USD':'symbol' }}</span></p>
+    <h4 class="mat-h4">
+      Total: {{ total | currency:'USD':'symbol' }}
+    </h4>
+  </div>
   <button
     mat-raised-button
     color="primary"

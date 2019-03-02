@@ -1,3 +1,26 @@
-<p>
-  {{ data.userData.firstName }}
-</p>
+<h1 class="mat-h1">Service Request Invoice</h1>
+<mat-divider></mat-divider>
+<div>
+  <h2 class="mat-h2">User Information</h2>
+  <p class="mat-body">First name: {{ data.userData.firstName }}</p>
+  <p class="mat-body">Last name: {{ data.userData.lastName }}</p>
+  <p class="mat-body">Email: {{ data.userData.email }}</p>
+</div>
+<div>
+  <h2 class="mat-h2">Requested Services</h2>
+  <p class="mat-body" *ngFor="let bj of data.bobJobs">{{ bj.name }}: {{ bj.price | currency:'USD':'symbol' }}</p>
+  <p class="mat-body">Service subtotal: {{ data.servicePriceTotal | currency:'USD':'symbol' }}</p>
+</div>
+<div>
+  <h2 class="mat-h2">Additional Fees</h2>
+  <p class="mat-body">Parts: {{ data.partsPrice | currency:'USD':'symbol' }}</p>
+  <p class="mat-body">Labor: {{ data.laborPrice | currency:'USD':'symbol' }}</p>
+</div>
+<h3 class="mat-h3">Total: {{ data.total | currency:'USD':'symbol' }}</h3>
+<button
+  mat-raised-button
+  color="primary"
+  (click)="print()"
+>
+  Print or Save
+</button>

@@ -11,4 +11,8 @@ export class InvoiceComponent {
     public dialogRef: MatDialogRef<InvoiceComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
+
+  print() {
+    window.print();
+  }
 }
