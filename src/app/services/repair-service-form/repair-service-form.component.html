@@ -16,7 +16,7 @@
     <div
       class="repair-service-checkbox-group"
       formArrayName="repairServices"
-      *ngFor="let rs of form.controls.repairServices.controls; let i = index"
+      *ngFor="let rs of form['controls'].repairServices['controls']; let i = index"
     >
       <label>
         <mat-checkbox [formControlName]="i"></mat-checkbox>
