@@ -7,7 +7,7 @@ import { BobJob } from '../bob-job';
   styleUrls: ['./featured-bob-job.component.scss']
 })
 export class FeaturedBobJobComponent implements OnInit {
-  @Input() bobJob: BobJob;
+  @Input() public bobJob: BobJob;
 
   ngOnInit() {
   }

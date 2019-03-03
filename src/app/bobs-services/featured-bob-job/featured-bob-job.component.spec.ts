@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
 import { FeaturedBobJobComponent } from './featured-bob-job.component';
 
@@ -8,7 +9,8 @@ describe('FeaturedBobJobComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FeaturedBobJobComponent ]
+      declarations: [ FeaturedBobJobComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));

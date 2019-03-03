@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
 import { RepairServiceFormComponent } from './repair-service-form.component';
 
@@ -8,7 +9,8 @@ describe('RepairServiceFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RepairServiceFormComponent ]
+      declarations: [ RepairServiceFormComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));
