@@ -11,6 +11,7 @@ import { BobJob } from "../bobs-services/bob-job";
   ]
 })
 export class HomeComponent {
+  title: string = "Bob's Computer Repair"
   bobJob: BobJob;
 
   constructor(bobJobService: BobJobService) { 

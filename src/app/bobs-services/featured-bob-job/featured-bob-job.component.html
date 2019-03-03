@@ -20,7 +20,7 @@
         </p>
         <mat-divider [inset]="true"></mat-divider>
         <p>
-          Price: {{ bobJob.price | currency:'USD':'symbol' }}
+          Price: <span class="bobjob-price">${{ bobJob.price | currency:'USD':'symbol' }}</span>
         </p>
     </mat-card-content>
   </div>
