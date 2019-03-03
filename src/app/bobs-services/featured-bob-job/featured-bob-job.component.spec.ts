@@ -21,7 +21,4 @@ describe('FeaturedBobJobComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
